@@ -15,11 +15,12 @@ import ChevronRightIcon from "@mui/icons-material/ChevronRight";
 import ListItem from "@mui/material/ListItem";
 import ListItemText from "@mui/material/ListItemText";
 import { Link } from "react-router-dom";
+
 const drawerWidth = 240;
 
 const ROUTES = {
-  Home: "",
-  Kapitalisasi: "kapitalisasi",
+  Home: "/",
+  Kapitalisasi: "/kapitalisasi",
 };
 
 const Main = styled("main", { shouldForwardProp: (prop) => prop !== "open" })(
