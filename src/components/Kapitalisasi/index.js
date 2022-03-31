@@ -1,8 +1,18 @@
 import { useState } from "react";
 import styled from "styled-components";
 import TextField from "@mui/material/TextField";
+import ContentCopyIcon from "@mui/icons-material/ContentCopy";
+import Tooltip from "@mui/material/Tooltip";
 
-const CSS = styled.div``;
+const CSS = styled.div`
+  #copy-btn {
+    cursor: pointer;
+    margin-top: 0.5em;
+    &:hover {
+      opacity: 0.8;
+    }
+  }
+`;
 
 const capitalize = (word) =>
   word[0].toUpperCase() + word.slice(1).toLowerCase();
@@ -47,9 +57,19 @@ const Kapitalisasi = () => {
         id="outlined-basic"
         variant="outlined"
         placeholder="Masukkan Judul Anda"
-        value={formatTitle(judul)}
-        onChange={(el) => setJudul(el.target.value)}
+        value={judul}
+        onChange={(el) => setJudul(formatTitle(el.target.value))}
+        sx={{ width: "100%" }}
       />
+      <div id="copy-btn">
+        <Tooltip title="copy">
+          <ContentCopyIcon
+            onClick={() => {
+              navigator.clipboard.writeText(judul);
+            }}
+          />
+        </Tooltip>
+      </div>
     </CSS>
   );
 };
