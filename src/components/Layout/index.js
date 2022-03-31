@@ -133,7 +133,12 @@ const PersistentDrawerLeft = ({ children }) => {
         <Divider />
         <List>
           {Object.keys(ROUTES).map((text) => (
-            <ListItem button key={text} component={Link} to={ROUTES[text]}>
+            <ListItem
+              button
+              key={text}
+              component={Link}
+              to={window.location.pathname.slice(0, -1) + ROUTES[text]}
+            >
               <ListItemText primary={text} />
             </ListItem>
           ))}
