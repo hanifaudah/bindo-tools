@@ -18,8 +18,8 @@ import { Link } from "react-router-dom";
 const drawerWidth = 240;
 
 const ROUTES = {
-  Home: "/",
-  Kapitalisasi: "/kapitalisasi",
+  Home: "",
+  Kapitalisasi: "kapitalisasi",
 };
 
 const Main = styled("main", { shouldForwardProp: (prop) => prop !== "open" })(
